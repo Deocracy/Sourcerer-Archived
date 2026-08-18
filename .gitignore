@@ -47,3 +47,4 @@ src-tauri/gen/schemas
 result
 result-*
 .direnv/
+.planning/research/.cache/
