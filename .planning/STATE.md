@@ -1,16 +1,15 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.0
-milestone_name: Container Platform
-status: executing
-stopped_at: Completed 09-06-PLAN.md (flake substituter + gated publish job + runbook); publish job red pending infra deploy
-last_updated: "2026-08-05T03:47:41.087Z"
-last_activity: 2026-08-04 -- Completed 09-05-PLAN.md
+milestone: v3.0
+milestone_name: Theia Foundation
+status: planning
+last_updated: "2026-08-18T22:26:37.280Z"
+last_activity: 2026-08-18
 progress:
-  total_phases: 12
+  total_phases: 0
   completed_phases: 0
-  total_plans: 12
-  completed_plans: 6
+  total_plans: 0
+  completed_plans: 0
   percent: 0
 ---
 
@@ -25,23 +24,10 @@ See: .planning/PROJECT.md (updated 2026-08-03)
 
 ## Current Position
 
-Phase: 9 (Flake Foundation & Assurance Chain) — EXECUTING
-Plan: 7 of 7
-Status: Ready to execute
-Last activity: 2026-08-04 -- Completed 09-05-PLAN.md
-
-**Phase 8 is DEFERRED, not abandoned (2026-08-05).** It ships no application code; its only
-output is evidence for Phase 15's compiler and Phase 19's audit, so it was mis-slotted as a
-phase. All planning artifacts are committed and checker-passed in
-`.planning/phases/08-spike-k-nix-native-substrate-service/` — whenever it runs it starts at
-execute, not discuss. Phases 9–19 are **not renumbered**; the gap is intentional. Re-decide at
-Phase 15: run the spike, or derive the hardening directives inside the compiler's own design.
-Research already overturned its D-09 (the nixpkgs `--disable-setcap` build makes
-`RestrictNamespaces`/`SystemCallFilter` the likely blocker, not `CapabilityBoundingSet`) — do
-not re-derive that.
-Progress: [------------] 0/12 phases
-
-**Two-host reminder:** every v2.0 phase states its execution host in ROADMAP.md. NixOS is the dev host; the Windows box runs Phases 8, 10, 12, 14, 17 and the UAT legs of 11, 15, 18, 19. A phase whose UAT silently assumes the dev host will strand.
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-08-18 — Milestone v3.0 started
 
 ## Performance Metrics
 

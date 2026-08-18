@@ -28,28 +28,17 @@ A pixel-perfect, fully interactive desktop shell where the applet framework demo
 - Persistence: `tauri-plugin-store` (workspace.json + applets.json) mapping onto `host.storage`; graduate to SQLite when applets need real data
 - `host.ai()` → Rust Tauri command → Node Pi sidecar (`@earendil-works/pi-coding-agent`), NDJSON streaming over a Channel; model zai-glm-4.7
 
-## Current Milestone: v2.0 Container Platform
+## Current Milestone: v3.0 Theia Foundation
 
-**Goal:** A non-technical scholar on a clean Windows 11 machine installs Sourcerer from the Microsoft Store (or signed site installer), gets a working NixOS-WSL substrate after at most one reboot, sees engine-backed functionality live (Notes, assistant, first Databasise wiki read-view served from the substrate), installs catalog apps (Collabora, Jupyter) as hardened Nix-native systemd units with visible security scores, reverts a bad update with one button, and migrates their whole environment to a second PC via manifest + data export.
+**Goal:** Replace the bespoke Tauri shell direction with a fork of Theia IDE as the Sourcerer frontend — a working, rebranded fork running locally as the environment Sourcerer is built up in incrementally.
 
 **Target features:**
-- Flake foundation + CI + binary cache (assurance chain: nothing publishes that CI didn't prove)
-- Custom NixOS-WSL substrate: Store/signed-site install flow, ≤1 reboot, kill switch, secrets plumbing, substrate-connection seam (auth surface stubbed)
-- Update channel with one-button revert; real `security.csp` (the v1.0 null-CSP acceptance expires here)
-- Engine services in substrate (Databasise — LightRAG disassembled into it, no separate dep; OCR deferred to an installable applet) and harness relocation; first engine-backed wiki read-view
-- App layer: manifest→NixOS-module compiler, panes via multiwebview, security scores — Nix-native units only, no OCI branch
-- Community store pipeline (cosign-signed, CVE-gated, privileged auto-reject) — not publicly opened until P8 passes
-- Tools tier + environment export/import ("Move to another PC")
-- Permission grants UI + portal file access; hardening close + milestone audit
+- Repo reorganization: freeze the superseded Tauri-shell and container-platform work into a `Sourcerer-v0/` folder (v2.0 Container Platform milestone frozen/superseded; phase archives kept)
+- Theia IDE forked and building locally; dev workflow documented and repeatable
+- Sourcerer branding/product customization applied (name, window title, theme direction)
+- Fork runs as a working environment — the base future milestones extend
 
-**Key context:** Two-host milestone — NixOS is the dev host; every WSL-dependent leg executes and UATs on the Windows box; every phase states its execution host. Plan source: `.planning/research/CONTAINER-PLATFORM-PLAN.md` + `CONTAINER-PLATFORM.md` (verifier-revised, spikes 010/011 validated). Wall-clock roughly doubles vs v1.0 (wait-dominated).
-
-**Setup options (delivery channels):**
-1. Windows 11 — Microsoft Store install (v2.0)
-2. Windows 11 — signed site installer (v2.0)
-3. macOS — site DMG (later)
-4. Linux — tarball/AppImage + `nix run` (later)
-5. Hosted cloud — browser client, per-tenant substrate (committed, own milestone)
+**Key context:** Same product goal (scholar research workbench: applets + Dashboard Assistant + Databasise engine), new foundation. Carry-over review is deliberately deferred — a later phase/milestone reviews what migrates from v1.0/v2.0 work (Pi assistant harness, Databasise integration plans, design tokens/theme, Nix flake/CI/Attic cache). This supersedes the VSCodium-foundation exploration verdict (`VSC Sourcerer Alternitive Exploration`, 2026-08-17).
 
 ## Requirements
 
@@ -106,6 +95,7 @@ Known debt at close (STATE.md Deferred Items): Phase 5 Notes has 3 never-run hum
 | **Nix-native rule: if it's not in nixpkgs, we package it** | Provenance (auditable source chain vs opaque publisher blob) + store page-sharing at commercial scale (per-tenant microVMs share pages via virtio-fs/DAX only across identical store paths; distinct image userlands never share). NOT permissions (identical either way since the engine drop), NOT disk (amortizes per-image), NOT speed (no difference). | — Decided 2026-08-04. Community catalog is Nix-native by construction; OCI is never a submission format. Sole exception: time-boxed first-party escape hatch (Phase 13 uv2nix), tracked as debt. |
 | Phase 8 rescoped: engine-less OCI unit → Nix-native substrate service | `collabora-online` turned out to be in nixpkgs with a full module and cached at 13.8 MB (vs ~1.5–2 GB image), obsoleting the original kill-question | — Decided 2026-08-04. New kill-question: does a self-sandboxing service (coolwsd) survive the §7 baseline under WSL2's kernel? |
 | Two-tier AI: hosted default (open-source embeddings, self-hosted own box; cloud generation) + local opt-in (Ollama as one-click catalog app in the substrate) | Zero-setup out of the box; local AI is a product point (privacy/offline), not an optimization. Same pinned embedding model on both tiers so hosted→local switch never re-embeds | — Decided 2026-08-04. Full decision set: `.planning/research/AI-PROVIDER-ARCHITECTURE.md` |
+| **Direction pivot: fork Theia IDE as the Sourcerer frontend** — v2.0 Container Platform frozen mid-Phase-9, all bespoke Tauri-shell work superseded and moved to `Sourcerer-v0/` | Building/maintaining a bespoke shell duplicates what a mature extensible workbench platform provides; Theia gives docking, extensions, theming, and an AI framework out of the box. Supersedes the VSCodium exploration verdict (2026-08-17) | — Decided 2026-08-18. Carry-over review (Pi harness, Databasise plans, tokens, Nix flake/CI/cache) deferred to a later phase |
 
 ## Constraints
 
@@ -132,4 +122,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-08-03 — milestone v2.0 Container Platform started*
+*Last updated: 2026-08-18 — milestone v3.0 Theia Foundation started (v2.0 Container Platform frozen/superseded)*
