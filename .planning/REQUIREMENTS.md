@@ -61,17 +61,20 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| REORG-01 | — | Pending |
-| REORG-02 | — | Pending |
-| FORK-01 | — | Pending |
-| FORK-02 | — | Pending |
-| FORK-03 | — | Pending |
+| REORG-01 | Phase 1 — Repo Reorganization | Pending |
+| REORG-02 | Phase 1 — Repo Reorganization | Pending |
+| FORK-01 | Phase 2 — Theia Fork Build & Run | Pending |
+| FORK-02 | Phase 2 — Theia Fork Build & Run | Pending |
+| FORK-03 | Phase 2 — Theia Fork Build & Run | Pending |
 
 **Coverage:**
 - v3.0 requirements: 5 total
-- Mapped to phases: 0 (roadmap pending)
-- Unmapped: 5 ⚠️
+- Mapped to phases: 5 ✓
+- Unmapped: 0 ✓
+- Duplicates (a requirement in more than one phase): 0 ✓
+
+Deferred and Out-of-Scope requirements are deliberately unmapped — they are not v3.0 roadmap input.
 
 ---
 *Requirements defined: 2026-08-18*
-*Last updated: 2026-08-18 after initial definition*
+*Last updated: 2026-08-18 after roadmap creation (traceability filled, 5/5 mapped)*
