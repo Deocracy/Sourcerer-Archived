@@ -48,3 +48,6 @@ result
 result-*
 .direnv/
 .planning/research/.cache/
+
+# VS Code exploration clone (own git repo, 338MB) — moves under Sourcerer-v0/ in v3.0 Phase 1
+VSC Sourcerer Alternitive Exploration/

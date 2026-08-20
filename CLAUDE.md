@@ -1,3 +1,17 @@
+> **⚠ DIRECTION CHANGE (2026-08-19): most of this file describes the retired
+> Tauri era (v1.0–v2.0).** Sourcerer is now a rebranded Eclipse Theia IDE
+> built up incrementally as `@sourcerer/*` Theia extensions. Authoritative
+> docs: `docs/PRODUCT-REQUIREMENTS.md` (product requirements R1–R9, Sourcerer
+> 4.0 = first shipped rebrand), `.planning/` (current milestone: v3.0 Theia
+> Foundation — repo reorg, then the theia-ide fork builds and runs), and
+> `docs/research/` (Theia/browser research). The v4.0 GUI is default Theia —
+> no GUI changes before post-4.0; GUI sketches are parked in
+> `.planning/sketches-gui-parked/`. Theia framework sources for reference are
+> cloned at `~/Vibe Coding/TheiaIDE/sources/` (v1.74.1). The Tauri-era
+> guidance below remains valid only for code that will live in
+> `Sourcerer-v0/` after Phase 1. This banner supersedes it until CLAUDE.md is
+> rewritten during the v3.0 reorg.
+
 <!-- GSD:project-start source:PROJECT.md -->
 ## Project
 
