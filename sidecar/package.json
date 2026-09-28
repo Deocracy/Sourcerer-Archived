@@ -9,7 +9,7 @@
     "test": "node --experimental-strip-types --test test/harness.test.mjs test/tools.test.mjs test/sessions.test.mjs"
   },
   "dependencies": {
-    "@earendil-works/pi-coding-agent": "^0.80.3",
+    "@earendil-works/pi-coding-agent": "^0.87.1",
     "@earendil-works/pi-ai": "^0.80.3",
     "typebox": "^1.1.38"
   },
